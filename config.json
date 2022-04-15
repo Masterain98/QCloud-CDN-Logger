@@ -1,0 +1,12 @@
+{
+  "SecretId": "YourTencentAPISecretID",
+  "SecretKey": "YourTencentAPISecretKey",
+  "domain": "YourCDNDomain",
+  "db_config": {
+    "dbAddress": "172.17.0.1",
+    "dbPort": 3306,
+    "dbName": "qcloud-log",
+    "dbUser": "qcloud-log",
+    "dbPassword": "qcloud_log"
+  }
+}
