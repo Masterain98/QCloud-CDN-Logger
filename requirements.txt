@@ -1,3 +1,4 @@
 PyMySQL~=1.0.2
 DBUtils~=3.0.2
 requests~=2.27.1
+tencentcloud-sdk-python
