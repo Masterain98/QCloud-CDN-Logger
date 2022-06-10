@@ -1,7 +1,7 @@
 {
   "SecretId": "YourTencentAPISecretID",
   "SecretKey": "YourTencentAPISecretKey",
-  "domain": "YourCDNDomain",
+  "domain": ["YourCDNDomain"],
   "db_config": {
     "dbAddress": "172.17.0.1",
     "dbPort": 3306,

@@ -19,7 +19,7 @@ with open("config.json", 'r') as config:
     config_dict = json.load(config)
 SecretId = config_dict["SecretId"]
 SecretKey = config_dict["SecretKey"]
-Domain = config_dict["domain"]
+DomainList = config_dict["domain"]
 
 
 def getLog(startTime, endTime, domain):
@@ -113,7 +113,8 @@ if __name__ == "__main__":
         start_time = start_time.strftime("%Y-%m-%d %H:%M:%S")
         end_time = end_time.strftime("%Y-%m-%d %H:%M:%S")
         # getLog("2022-03-17 00:00:00", "2022-04-16 17:59:59", Domain)
-        getLog(start_time, end_time, Domain)
+        for Domain in DomainList:
+            getLog(start_time, end_time, Domain)
 
         print("休眠 " + str(currentTimestamp - int(time.time())) + " 秒")
         time.sleep(currentTimestamp - int(time.time()))
