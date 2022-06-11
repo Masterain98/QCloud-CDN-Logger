@@ -86,14 +86,18 @@ def getLog(startTime, endTime, domain):
                                 r"HTTP_Response, Referer, Response_Time, User_Agent, Range_Parameter, HTTP_Method," \
                                 r"HTTP_Protocols, Cache_Status, CDN_Port) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s," \
                                 r"%s, %s, %s, %s, %s, %s, %s)"
+                print(SQL_statement % (str(Request_Time), str(IP), str(Domain), str(Path), str(Request_Size), str(Province_ID), str(ISP_ID),
+                                           str(HTTP_Response), str(Referer), str(Response_Time), str(UA), str(Range_Parameter), str(HTTP_Method),
+                                           str(HTTP_Protocols), str(Cache_Status), str(CDN_Port)))
                 data = db.insertone(SQL_statement,
-                                    param=(Request_Time, IP, Domain, Path, Request_Size, Province_ID, ISP_ID, \
-                                           HTTP_Response, Referer, Response_Time, UA, Range_Parameter, HTTP_Method, \
+                                    param=(Request_Time, IP, Domain, Path, Request_Size, Province_ID, ISP_ID,
+                                           HTTP_Response, Referer, Response_Time, UA, Range_Parameter, HTTP_Method,
                                            HTTP_Protocols, Cache_Status, CDN_Port))
                 if str(data) == "1":
                     print("写入数据成功")
                 else:
                     print("写入数据失败 " + str(datetime.utcnow().replace(tzinfo=timezone.utc).astimezone(timezone(timedelta(hours=8)))))
+                    print(str(data))
 
 
     except TencentCloudSDKException as err:
